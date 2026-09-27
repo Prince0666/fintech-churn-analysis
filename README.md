@@ -64,7 +64,7 @@ plt.xlabel('Churned (0=No, 1=Yes)')
 plt.ylabel('Count')
 plt.show()
 ```
-![Churn Distribution](charts/churn_distribution.png)
+![Churn Distribution](churn_distribution.png)
 
 ~2,600 retained vs ~1,400 churned — confirms the 34.95% churn rate visually.
 
@@ -86,8 +86,8 @@ plt.title('Churn Rate by Product Type')
 plt.ylabel('Churn Rate (%)')
 plt.show()
 ```
-![Churn by Segment](charts/churn_by_segment.png)
-![Churn by Product](charts/churn_by_product.png)
+![Churn by Segment](churn_by_segment.png)
+![Churn by Product](churn_by_product.png)
 
 Numbers match the SQL output exactly (Basic 53.5%, Premium 9.3%, Standard 27.0%) — a good cross-validation between the two tools. Product type shows a much flatter spread, confirming segment is the stronger categorical driver.
 
@@ -106,9 +106,9 @@ plt.title('Days Since Last Active vs Churn')
 plt.xlabel('Churned (0=No, 1=Yes)')
 plt.show()
 ```
-![Late Payments Boxplot](charts/late_payments_boxplot.png)
-![Support Tickets Boxplot](charts/support_tickets_boxplot.png)
-![Days Inactive Boxplot](charts/days_inactive_boxplot.png)
+![Late Payments Boxplot](late_payments_boxplot.png)
+![Support Tickets Boxplot](support_tickets_boxplot.png)
+![Days Inactive Boxplot](days_inactive_boxplot.png)
 
 **Late payments:** medians look similar between churned/not-churned at the individual-customer level — the effect only becomes clearly visible once bucketed (as done in SQL Q6). This is a useful nuance: raw boxplots can understate a driver that's actually a strong step-function risk signal.
 
@@ -129,7 +129,7 @@ sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f')
 plt.title('Correlation Heatmap')
 plt.show()
 ```
-![Correlation Heatmap](charts/correlation_heatmap.png)
+![Correlation Heatmap](correlation_heatmap.png)
 
 **Correlation with churn (strongest to weakest):**
 - `days_since_last_active`: **+0.39** (strongest driver)
